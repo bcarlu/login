@@ -11,6 +11,7 @@ function login(){
 	
 	$usuario = $_POST['usuario'];
 	$clave = $_POST['clave'];
+	$email = $_POST['email'];
 
 	/*DECLARACION DE VARIABLES*/
 	
@@ -20,7 +21,7 @@ function login(){
 	$arraySelecTabla = mysqli_fetch_array($querySelecTabla);
 
 	//Variables para escribir en la base de datos
-	$inserTabla = "INSERT INTO t_usuarios (usuario,clave) VALUES ('$usuario','$clave')";
+	$inserTabla = "INSERT INTO t_usuarios (usuario,email,clave) VALUES ('$usuario','$email','$clave')";
 
 
 
@@ -29,7 +30,7 @@ function login(){
 
 	//Consulta de usuario registrado
 	if ($usuario == $arraySelecTabla['usuario'] & $clave == $arraySelecTabla['clave']) {
-		echo "Hola $usuario su ID de usuario es: ". $arraySelecTabla['id'];
+		echo "Hola $usuario su ID de usuario es: ". $arraySelecTabla['id'] . " y su correo es : ". $arraySelecTabla['email'];
 	}
 	else{
 		echo "No está registrado";
