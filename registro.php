@@ -3,13 +3,18 @@
 
 
 
-<body class="index">
+<body class="registro">
 
-<form action="index.php" class="login-form" method="post">
-		<h1>Login</h1>
+<form action="registro.php" class="reg-form" method="post">
+		<h1>Registro</h1>
 		<div class="txtb">
 			<input type="text" name="usuario" required>
 			<span data-placeholder="Usuario"></span>
+        </div>
+        
+        <div class="txtb">
+			<input type="email" name="email" required>
+			<span data-placeholder="Email"></span>
 		</div>
 
 		<div class="txtb">
@@ -17,15 +22,15 @@
 			<span data-placeholder="Contraseña"></span>
 		</div>
 
-		<input type="submit" class="logbtn" value="Ingresar">
+		<input type="submit" class="logbtn-reg" value="Registrarme">
 
 		<div class="bottom-text">
-			No tienes cuenta? <a href="registro.php">Regístrate</a>
+			Ya te registraste? <a href="index.php">Ingresar</a>
 		</div>
 
 		<?php if ($_POST) { ?>
 		<div class="msg-success">
-			<?php login(); ?>			
+			<?php registro(); ?>			
 		</div>
 		<?php } ?>
 	</form>
@@ -39,7 +44,7 @@
 			if($(this).val() == "")
 			$(this).removeClass("focus");
 		});
-	</script>
-
+    </script>
+    
 </body>
 </html>
