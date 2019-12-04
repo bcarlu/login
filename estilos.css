@@ -149,13 +149,13 @@ body.registro {
     margin-bottom: 30px;
 }
 
-.txtb {
+.txtb-reg {
     border-bottom: 2px solid #adadad;
     position: relative;
     margin: 30px 0;
 }
 
-.txtb input {
+.txtb-reg input {
     font-size: 15px;
     color: #333;
     border: none;
@@ -166,7 +166,7 @@ body.registro {
     height: 40px;
 }
 
-.txtb span::before {
+.txtb-reg span::before {
     content: attr(data-placeholder);
     position: absolute;
     top: 50%;
@@ -177,7 +177,7 @@ body.registro {
     transition: .5s;
 }
 
-.txtb span::after {
+.txtb-reg span::after {
     content: '';
     position: absolute;
     width: 0%;

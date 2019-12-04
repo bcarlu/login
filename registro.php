@@ -7,17 +7,17 @@
 
 <form action="registro.php" class="reg-form" method="post">
 		<h1>Registro</h1>
-		<div class="txtb">
+		<div class="txtb-reg">
 			<input type="text" name="usuario" required>
 			<span data-placeholder="Usuario"></span>
         </div>
         
-        <div class="txtb">
+        <div class="txtb-reg">
 			<input type="email" name="email" required>
 			<span data-placeholder="Email"></span>
 		</div>
 
-		<div class="txtb">
+		<div class="txtb-reg">
 			<input type="password" name="clave" required>
 			<span data-placeholder="Contraseña"></span>
 		</div>
@@ -36,11 +36,11 @@
 	</form>
 
 	<script>
-		$(".txtb input").on("focus",function(){
+		$(".txtb-reg input").on("focus",function(){
 			$(this).addClass("focus");
 		});
 
-		$(".txtb input").on("blur",function(){
+		$(".txtb-reg input").on("blur",function(){
 			if($(this).val() == "")
 			$(this).removeClass("focus");
 		});
