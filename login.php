@@ -13,9 +13,9 @@ function login(){
 	$clave = $_POST['clave'];
 	$email = $_POST['email'];
 
-	/*DECLARACION DE VARIABLES*/
+	/*VARIABLES*/
 	
-	//Variables para la consulta general a la base de datos
+	//Consulta a la base de datos
 	$selecTabla = "SELECT * FROM t_usuarios WHERE usuario = '$usuario'";
 	$querySelecTabla = mysqli_query($conexion,$selecTabla);
 	$arraySelecTabla = mysqli_fetch_array($querySelecTabla);
@@ -46,16 +46,12 @@ function registro(){
 	$querySelecTabla = mysqli_query($conexion,$selecTabla);
 	$arraySelecTabla = mysqli_fetch_array($querySelecTabla);
 
-	//Variables para escribir en la base de datos
+	//Variables para insertar en la base de datos
 	$inserTabla = "INSERT INTO t_usuarios (usuario,email,clave) VALUES ('$usuario','$email','$clave')";
 
 	//Registro de nuevo usuario
 	if($usuario != $arraySelecTabla['usuario']) {
 		mysqli_query($conexion,$inserTabla);
-		//Variables para consultar usuario especifico
-		$selectUsuario = "SELECT * FROM t_usuarios WHERE usuario = '$usuario'";
-		$querySelectUsuario = mysqli_query($conexion,$selectUsuario);
-		$arraySelectUsuario = mysqli_fetch_array($querySelectUsuario);
 		echo "Bienvenido! usuario registrado con exito. Ahora puedes <a href='index.php'>Ingresar</a>";
 	}
 	elseif ($email == $arraySelecTabla['email']){
